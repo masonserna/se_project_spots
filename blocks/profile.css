@@ -1,0 +1,134 @@
+.profile {
+  display: flex;
+  padding: 34px 0 20px;
+  border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
+}
+
+.profile__avatar {
+  width: 190px;
+  height: 190px;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+.profile__name {
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__description {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  opacity: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__edit-button {
+  margin-top: auto;
+  border: none;
+  border-radius: 90px;
+  background: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 107.34px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  opacity: 70%;
+  padding: 0;
+}
+
+.profile__edit-button:hover {
+  opacity: 100%;
+}
+
+.profile__pencil-icon {
+  width: 18.48px;
+  height: 3.21px;
+}
+
+.profile__new-post-button {
+  background-color: #212121;
+  color: #fcf5e5;
+  margin: 138px 0 0 auto;
+  width: 149px;
+  height: 52px;
+  border: none;
+  border-radius: 8px;
+  padding: 18px 24px 18px 0px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.profile__new-post-button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.profile__plus-icon {
+  width: 12px;
+  height: 12px;
+  padding-right: 8px;
+  padding-left: 32px;
+}
+
+@media screen and (max-width: 627px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  .profile__column {
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .profile__avatar {
+    width: 80px;
+    height: 80px;
+    margin: 20px 0 12px 0;
+  }
+
+  .profile__name {
+    font-size: 20px;
+    margin-bottom: 6px;
+    max-width: 288px;
+  }
+
+  .profile__description {
+    margin-bottom: 32px;
+    max-width: 288px;
+  }
+
+  .profile__new-post-button {
+    margin: 0;
+    width: 100%;
+  }
+}

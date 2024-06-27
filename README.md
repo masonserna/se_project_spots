@@ -1,21 +1,27 @@
-# Project 3: Spots
+# Spots- Image Sharing
 
-### Overview  
+Spots is a social media web app (JavaScript functionality will be added) in which a user can share photos. It's built using HTML, CSS, Flexbox, and Grid. This project is responsive and optimized for screen 1440px and above, as well as 627 px and below.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## Project Features and Technology Used
+
+- Semantic HTML5
+- CSS
+- Figma
+- Flexbox
+- Grid
+- Responsive Design
+- Media Queries
+
+## Sneak Peak:
+
+`1440px`
+![screenshot of 1440px site](./images/1440-screenshot.png)
+
+`627px`
+![screenshot of 627px site](./images/627-screenshot.png)
+![screenshot of 627px site](./images/627-screenshot2.png)
+
+## Deployment
+
+This site is deployed to GitHub Pages.
+Here's the link:
