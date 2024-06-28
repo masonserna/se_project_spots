@@ -22,7 +22,6 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
-  text-wrap: nowrap;
 }
 
 .profile__description {
@@ -64,6 +63,7 @@
 
 .profile__edit-button:hover {
   opacity: 100%;
+  cursor: pointer;
 }
 
 .profile__pencil-icon {
@@ -130,7 +130,7 @@
   }
 
   .profile__new-post-button {
-    margin: 0;
+    margin: 0 0 20px 0;
     width: 100%;
   }
 }

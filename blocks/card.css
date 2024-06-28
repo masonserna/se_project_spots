@@ -4,6 +4,7 @@
   margin-bottom: 12px;
   border-radius: 8px;
   display: block;
+  object-fit: cover;
 }
 
 .card__content {
@@ -37,6 +38,7 @@
 
 .card__like-button:hover {
   opacity: 100%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
