@@ -22,6 +22,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
+  text-wrap: nowrap;
 }
 
 .profile__description {
@@ -82,6 +83,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
+  text-wrap: nowrap;
 }
 
 .profile__new-post-button:hover {
