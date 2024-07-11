@@ -24,3 +24,7 @@ Spots is a social media web app (JavaScript functionality will be added) in whic
 ## Deployment
 
 This site is deployed to GitHub Pages. View it [here](https://masonserna.github.io/se_project_spots)
+
+## Video Demo
+
+[Demo link](https://www.loom.com/share/d0ea934c020949489ca8f8d178b785b4?sid=e2ec3257-22b7-4a65-8a94-bc9bcfcaaa30)
