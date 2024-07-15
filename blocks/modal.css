@@ -8,11 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* visibility: hidden; */
+  visibility: hidden;
   padding: 0 20px;
 }
 
-.modal_opended {
+.modal_opened {
   visibility: visible;
 }
 
@@ -26,7 +26,7 @@
   border-radius: 8px;
 }
 
-.modal__close-btn {
+.modal__close-button {
   position: absolute;
   top: 32px;
   right: 50px;
@@ -64,7 +64,7 @@
   border: #21212140 1px solid;
 }
 
-.modal__submit-btn {
+.modal__submit-button {
   width: 156px;
   padding: 18px 58px;
   background-color: #212121;
@@ -84,7 +84,7 @@
     padding: 12px;
   }
 
-  .modal__close-btn {
+  .modal__close-button {
     top: 12px;
     right: 12px;
   }
@@ -103,7 +103,7 @@
     font-size: 16px;
   }
 
-  .modal__submit-btn {
+  .modal__submit-button {
     width: 100%;
   }
 }
