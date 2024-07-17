@@ -38,6 +38,10 @@
   background-color: #fff;
 }
 
+.modal__close-button:hover {
+  cursor: pointer;
+}
+
 .modal__title {
   margin: 0 0 32px;
   font-size: 32px;
@@ -73,6 +77,10 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
+}
+
+.modal__submit-button:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
