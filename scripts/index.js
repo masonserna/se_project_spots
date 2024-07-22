@@ -55,11 +55,15 @@ const addCardModal = document.querySelector("#add-card-modal");
 const addCardModalCloseButton = addCardModal.querySelector(
   ".modal__close-button"
 );
+const addCardFormSubmit = addCardModal.querySelector(".modal__form");
+const addCardLinkInput = addCardModal.querySelector("#add-card-link-input");
+const addCardNameInput = addCardModal.querySelector("#add-card-name-input");
 
 //Card related elements//
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
+//function to load cards from array//
 function getCardElement(data) {
   console.log(data);
   const cardElement = cardTemplate.content
@@ -74,7 +78,7 @@ function getCardElement(data) {
 
   return cardElement;
 }
-
+//functions to open and close each modal//
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
@@ -82,7 +86,7 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
-
+//functions to submit forms//
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
@@ -90,6 +94,18 @@ function handleEditFormSubmit(evt) {
   closeModal(editModal);
 }
 
+function handleAddCardFormSubmit(evt) {
+  evt.preventDefault();
+  const inputValues = {
+    name: addCardNameInput.value,
+    link: addCardLinkInput.value,
+  };
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
+  closeModal(addCardModal);
+}
+
+//Click event listeners for modal buttons//
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
@@ -109,6 +125,7 @@ addCardModalCloseButton.addEventListener("click", () => {
 });
 
 editFormSubmit.addEventListener("submit", handleEditFormSubmit);
+addCardFormSubmit.addEventListener("submit", handleAddCardFormSubmit);
 
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
