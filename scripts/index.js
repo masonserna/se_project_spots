@@ -33,10 +33,15 @@ const initialCards = [
 
 console.log(initialCards);
 
+//Profile elements//
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
+const profileNewPostButton = document.querySelector(
+  ".profile__new-post-button"
+);
 
+//editModal Form Elements//
 const editModal = document.querySelector("#edit-modal");
 const editModalCloseButton = editModal.querySelector(".modal__close-button");
 const editModalNameInput = editModal.querySelector("#profile-name-input");
@@ -45,6 +50,13 @@ const editModalDescriptionInput = editModal.querySelector(
 );
 const editFormSubmit = editModal.querySelector(".modal__form");
 
+//addCardModal Form elements//
+const addCardModal = document.querySelector("#add-card-modal");
+const addCardModalCloseButton = addCardModal.querySelector(
+  ".modal__close-button"
+);
+
+//Card related elements//
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
@@ -63,25 +75,39 @@ function getCardElement(data) {
   return cardElement;
 }
 
-function openModal() {
-  editModal.classList.add("modal_opened");
-  editModalNameInput.value = profileName.textContent;
-  editModalDescriptionInput.value = profileDescription.textContent;
+function openModal(modal) {
+  modal.classList.add("modal_opened");
 }
 
-function closeModal() {
-  editModal.classList.remove("modal_opened");
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
 }
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
-  closeModal();
+  closeModal(editModal);
 }
 
-profileEditButton.addEventListener("click", openModal);
-editModalCloseButton.addEventListener("click", closeModal);
+profileEditButton.addEventListener("click", () => {
+  editModalNameInput.value = profileName.textContent;
+  editModalDescriptionInput.value = profileDescription.textContent;
+  openModal(editModal);
+});
+
+editModalCloseButton.addEventListener("click", () => {
+  closeModal(editModal);
+});
+
+profileNewPostButton.addEventListener("click", () => {
+  openModal(addCardModal);
+});
+
+addCardModalCloseButton.addEventListener("click", () => {
+  closeModal(addCardModal);
+});
+
 editFormSubmit.addEventListener("submit", handleEditFormSubmit);
 
 initialCards.forEach((item) => {
