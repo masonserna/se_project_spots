@@ -65,7 +65,6 @@ const cardsList = document.querySelector(".cards__list");
 
 //function to load cards from array//
 function getCardElement(data) {
-  console.log(data);
   const cardElement = cardTemplate.content
     .querySelector(".card")
     .cloneNode(true);
@@ -75,6 +74,17 @@ function getCardElement(data) {
   const cardsImage = cardElement.querySelector(".card__image");
   cardsImage.src = data.link;
   cardsImage.alt = data.alt;
+
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("card__like-button_liked");
+  });
+
+  cardDeleteButton.addEventListener("click", () => {
+    cardElement.remove(cardElement);
+  });
 
   return cardElement;
 }
@@ -129,5 +139,5 @@ addCardFormSubmit.addEventListener("submit", handleAddCardFormSubmit);
 
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
-  cardsList.prepend(cardElement);
+  cardsList.append(cardElement);
 });

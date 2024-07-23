@@ -36,10 +36,12 @@
   background-position: center;
   border: none;
   background-color: #fff;
+  opacity: 40%;
 }
 
 .modal__close-button:hover {
   cursor: pointer;
+  opacity: 100%;
 }
 
 .modal__title {
