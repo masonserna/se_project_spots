@@ -1,17 +1,26 @@
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorMessageID = inputElement.id + "-error";
-  const errorMessageElement = document.querySelector("#" + errorMessageID);
+  const errorMessageElement = formElement.querySelector("#" + errorMessageID);
   errorMessageElement.textContent = errorMessage;
-  console.log(errorMessageID);
+  inputElement.classList.add("modal__input_type_error");
+};
+
+const hideInputError = (formElement, inputElement) => {
+  const errorMessageID = inputElement.id + "-error";
+  const errorMessageElement = formElement.querySelector("#" + errorMessageID);
+  errorMessageElement.textContent = "";
+  inputElement.classList.remove("modal__input_type_error");
 };
 
 const checkInputValidity = (formElement, inputElement) => {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage);
   } else {
-    hideInputError(formElement, inputElement, inputElement.validationMessage);
+    hideInputError(formElement, inputElement);
   }
 };
+
+//Mason, test out changing this to be *if (inputElement.validity.valid- hideInputError, else showInputError*
 
 const setEventListeners = (formElement) => {
   const inputList = Array.from(formElement.querySelectorAll(".modal__input"));
