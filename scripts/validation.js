@@ -20,6 +20,22 @@ const checkInputValidity = (formElement, inputElement) => {
   }
 };
 
+const hasInvalidInput = (inputList) => {
+  return inputList.some((input) => {
+    return !input.validity.valid;
+  });
+};
+
+const toggleButtonState = (inputList, buttonElement) => {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.disabled = true;
+    buttonElement.classList.add("modal__submit-btn_disabled");
+  } else {
+    buttonElement.disabled = false;
+    buttonElement.classList.remove("modal__submit-btn_disabled");
+  }
+};
+
 //Mason, test out changing this to be *if (inputElement.validity.valid- hideInputError, else showInputError*
 
 const setEventListeners = (formElement) => {
@@ -32,7 +48,7 @@ const setEventListeners = (formElement) => {
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
       checkInputValidity(formElement, inputElement);
-      // toggleButtonState(inputList, buttonElement);
+      toggleButtonState(inputList, buttonElement);
     });
   });
 };
