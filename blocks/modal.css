@@ -109,6 +109,8 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1.1;
+  color: #212121;
+  opacity: 70%;
 }
 
 .modal__input {
@@ -118,6 +120,8 @@
   line-height: 1;
   border-radius: 8px;
   border: #21212140 1px solid;
+  opacity: 100%;
+  /*input is showing as 70% opacity, not 100%*/
 }
 
 .modal__input:hover {
