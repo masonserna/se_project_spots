@@ -69,6 +69,9 @@ const previewModalCaption = previewModal.querySelector(".modal__caption");
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
+//Close modals by clicking overlay//
+const modals = document.querySelectorAll(".modal");
+
 //function to load cards from array//
 function getCardElement(data) {
   const cardElement = cardTemplate.content
@@ -111,6 +114,31 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
+
+//function to close modal by clicking overlay//
+modals.forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
+
+//function and event listener to close open modals by pressing Escape key//
+function closeOpenModals() {
+  modals.forEach((modal) => {
+    if (modal.classList.contains("modal_opened")) {
+      closeModal(modal);
+    }
+  });
+}
+
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    closeOpenModals();
+    document.removeEventListener("keydown", evt);
+  }
+});
 
 //universal function for close buttons//
 closeBtns.forEach((button) => {
