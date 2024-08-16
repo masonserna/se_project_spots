@@ -121,7 +121,6 @@
   border-radius: 8px;
   border: #21212140 1px solid;
   opacity: 100%;
-  /*input is showing as 70% opacity, not 100%*/
 }
 
 .modal__input:hover {
