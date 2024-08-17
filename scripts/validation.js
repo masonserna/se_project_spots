@@ -7,10 +7,6 @@ const settings = {
   errorClass: "modal__error",
 };
 
-//PLEASE READ!!!//
-
-// You said in your correction, "Modals should not change their size to match the design when error messages appear under the inputs." However, the Figma file depicts that the modals do change size when the error messages are present.//
-
 const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorMessageID = inputElement.id + "-error";
   const errorMessageElement = formElement.querySelector("#" + errorMessageID);
