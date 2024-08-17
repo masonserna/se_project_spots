@@ -51,11 +51,11 @@ const editModalNameInput = editModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
-const editFormSubmit = editModal.querySelector(".modal__form");
+const editFormSubmit = document.forms["edit-profile-form"];
 
 //addCardModal Form elements//
 const addCardModal = document.querySelector("#add-card-modal");
-const addCardFormSubmit = addCardModal.querySelector(".modal__form");
+const addCardFormSubmit = document.forms["add-card-form"];
 const addCardLinkInput = addCardModal.querySelector("#add-card-link-input");
 const addCardNameInput = addCardModal.querySelector("#add-card-name-input");
 const cardSubmitBtn = addCardModal.querySelector(".modal__submit-btn");
@@ -93,7 +93,7 @@ function getCardElement(data) {
   });
 
   cardDeleteBtn.addEventListener("click", () => {
-    cardElement.remove(cardElement);
+    cardElement.remove();
   });
 
   cardImage.addEventListener("click", () => {
@@ -109,10 +109,12 @@ function getCardElement(data) {
 //functions to open and close each modal//
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscKey);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscKey);
 }
 
 //function to close modal by clicking overlay//
@@ -124,21 +126,16 @@ modals.forEach((modal) => {
   });
 });
 
-//function and event listener to close open modals by pressing Escape key//
-function closeOpenModals() {
-  modals.forEach((modal) => {
-    if (modal.classList.contains("modal_opened")) {
-      closeModal(modal);
-    }
-  });
-}
+//function to handle pressing the Escape key when a modal is opened//
 
-document.addEventListener("keydown", (evt) => {
+function handleEscKey(evt) {
   if (evt.key === "Escape") {
-    closeOpenModals();
-    document.removeEventListener("keydown", evt);
+    const openModal = document.querySelector(".modal_opened");
+    if (openModal) {
+      closeModal(openModal);
+    }
   }
-});
+}
 
 //universal function for close buttons//
 closeBtns.forEach((button) => {
